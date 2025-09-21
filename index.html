@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Victor_corrica — Minhas Redes</title>
+
+  <!-- Font Awesome (ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      --yellow: #FFD700;
+      --black: #111;
+    }
+
+    *{box-sizing:border-box;}
+    html,body{height:100%;margin:0;font-family: 'Helvetica Neue', Arial, sans-serif;}
+
+    body{
+      min-height:100vh;
+      padding:20px;
+      text-align:center;
+      background-color:var(--yellow);
+      background-image: url("imagens/fundovictor.png");
+      background-repeat:no-repeat;
+      background-size:cover;
+      background-position:center;
+      color:var(--black);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .character{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:80vw;
+      max-width:1200px;
+      opacity:0.30;
+      z-index:0;
+      pointer-events:none;
+    }
+
+    .container{
+      position:relative;
+      z-index:1;
+      max-width:440px;
+      margin:0 auto;
+    }
+
+    .profile-pic{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      object-fit:cover;
+      margin:30px auto 14px;
+      border:3px solid var(--black);
+      display:block;
+    }
+
+    h1{
+      font-size:2.1rem;
+      margin:6px 0;
+      letter-spacing:0.5px;
+    }
+
+    p.bio{
+      font-size:1rem;
+      color:#222;
+      margin-bottom:18px;
+    }
+
+    .links{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      padding:0 12px;
+      margin:0 auto 28px;
+    }
+
+    .link-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      padding:16px;
+      background-color:var(--black);
+      color:var(--yellow);
+      text-decoration:none;
+      font-size:1.28rem;
+      font-weight:800;
+      border-radius:12px;
+      transition:background-color .18s ease, transform .15s ease;
+    }
+
+    .link-btn i{ font-size:1.6rem; color:var(--yellow); }
+
+    .link-btn:hover{ background-color:#333; transform:scale(1.04); }
+
+    footer{
+      margin-top:10px;
+      font-size:0.9rem;
+      color:var(--black);
+    }
+
+    @media (max-width:420px){
+      .profile-pic{ width:98px;height:98px; }
+      .link-btn{ font-size:1.05rem; padding:12px; gap:10px; }
+      .link-btn i{ font-size:1.35rem; }
+      .character{ width:110vw; opacity:0.25; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Personagem PNG grande -->
+  <img src="imagens/iconvictor.png" alt="Arte Victor_corrica" class="character">
+
+  <div class="container">
+    <!-- Foto de perfil -->
+    <img src="imagens/profile_victor.jpg" alt="Victor_corrica" class="profile-pic">
+
+    <h1>Victor_corrica</h1>
+    <p class="bio">Sua frase curta ou slogan aqui</p>
+
+    <!-- Links -->
+    <div class="links">
+      <a class="link-btn" href="https://www.instagram.com/SEU_USUARIO" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+      <a class="link-btn" href="https://www.youtube.com/SEU_CANAL" target="_blank" rel="noopener">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+
+      <!-- Kick -->
+      <a class="link-btn" href="https://kick.com/SEU_USUARIO" target="_blank" rel="noopener">
+        <i class="fas fa-play"></i> Kick
+      </a>
+
+      <a class="link-btn" href="https://x.com/SEU_USUARIO" target="_blank" rel="noopener">
+        <i class="fab fa-x-twitter"></i> Twitter (X)
+      </a>
+
+      <a class="link-btn" href="https://discord.gg/SEU_SERVIDOR" target="_blank" rel="noopener">
+        <i class="fab fa-discord"></i> Discord
+      </a>
+
+      <a class="link-btn" href="https://www.twitch.tv/SEU_CANAL" target="_blank" rel="noopener">
+        <i class="fab fa-twitch"></i> Twitch
+      </a>
+    </div>
+
+    <footer>
+      <p>© 2025 Victor_corrica | Todos os direitos reservados</p>
+    </footer>
+  </div>
+
+</body>
+</html>
