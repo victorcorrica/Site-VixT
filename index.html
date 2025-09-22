@@ -5,14 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Victor_corrica</title>
 
-  <!-- Font Awesome (ícones) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     :root {
-      --orange: #FF7700;   /* cor laranja para ícones e textos */
-      --dark-text: #111111; /* texto escuro para bio e rodapé */
-      --bg-orange: #FFAA33; /* fallback laranja se precisar */
+      --orange: #FF7700;  
+      --dark-text: #111111; 
+      --bg-orange: #FFAA33; 
     }
 
     * { box-sizing: border-box; }
@@ -28,20 +27,22 @@
       background-size: cover;
       background-position: center;
       color: var(--dark-text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       padding: 20px;
       position: relative;
       overflow: hidden;
     }
 
-    /* Personagem PNG menor para desktop */
     .character {
       position: absolute;
       top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 60vw;      /* tamanho desktop */
-      max-width: 900px; 
+      width: 60vw;
+      max-width: 900px;
       opacity: 0.3;
       z-index: 0;
       pointer-events: none;
@@ -50,8 +51,13 @@
     .container {
       position: relative;
       z-index: 1;
+      width: 100%;
       max-width: 420px;
-      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .profile-pic {
@@ -59,12 +65,8 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-top: 30px;
-      margin-bottom: 16px;
       border: 2px solid var(--dark-text);
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 16px;
     }
 
     h1 {
@@ -76,14 +78,14 @@
     p.bio {
       font-size: 1rem;
       color: var(--dark-text);
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .links {
       display: flex;
       flex-direction: column;
       gap: 14px;
-      margin: 0 auto 30px;
+      width: 100%;
       padding: 0 10px;
     }
 
@@ -110,18 +112,16 @@
     .link-btn:hover { background-color: #333333; }
 
     footer {
-      margin-top: 18px;
+      margin-top: 20px;
       font-size: 0.95rem;
       color: var(--dark-text);
     }
 
-    /* Ajuste para celular */
     @media (max-width: 420px) {
-      .container { padding: 0 8px; }
       .character {
-        width: auto;       /* mantém proporção */
-        height: 120%;      /* aumenta para celular */
-        top: 55%;          /* centraliza verticalmente melhor */
+        width: auto;
+        height: 120%;
+        top: 55%;
         left: 50%;
         transform: translate(-50%, -50%);
         opacity: 0.3;
@@ -134,33 +134,27 @@
 </head>
 <body>
 
-  <!-- Personagem PNG no fundo -->
   <img src="images/iconvictor.png" alt="Personagem" class="character">
 
   <div class="container">
-    <!-- Foto de perfil -->
     <img src="images/profile_victor.jpg" alt="Minha Foto" class="profile-pic">
 
     <h1>Victor_corrica</h1>
-    <p class="bio">Aqui vai uma frase curta sobre você</p>
+    <p class="bio">Eu amo todos vocés</p>
 
     <div class="links">
       <a href="https://www.twitch.tv/victor_corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-twitch"></i> Twitch
       </a>
-
       <a href="https://www.youtube.com/@Victor.Corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-youtube"></i> YouTube
       </a>
-
       <a href="https://www.instagram.com/victor_corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i> Instagram
       </a>
-
       <a href="https://x.com/Victor_corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-x-twitter"></i> Twitter (X)
       </a>
-
       <a href="https://discord.gg/37FvBuu2g3" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Discord
       </a>
