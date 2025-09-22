@@ -16,13 +16,16 @@
     }
 
     * { box-sizing: border-box; }
-
     html, body { height: 100%; margin: 0; }
 
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
       background-color: var(--bg-orange);
+      background-image: url("images/fundovictor.png"); /* Fundo sempre visível */
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
       color: var(--dark-text);
       text-align: center;
       position: relative;
@@ -33,14 +36,14 @@
       padding: 20px;
     }
 
-    /* Personagem PNG do fundo cobrindo toda a tela */
+    /* Personagem PNG do fundo */
     .character {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover; /* preenche toda a tela sem deformar */
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50%;        /* Desktop: ocupa metade da tela */
+      max-width: 600px;
       opacity: 0.3;
       z-index: 0;
       pointer-events: none;
@@ -63,17 +66,8 @@
       display: block;
     }
 
-    h1 {
-      font-size: 1.8rem;
-      margin: 6px 0;
-      color: var(--dark-text);
-    }
-
-    p.bio {
-      font-size: 1rem;
-      color: var(--dark-text);
-      margin-bottom: 20px;
-    }
+    h1 { font-size: 1.8rem; margin: 6px 0; color: var(--dark-text); }
+    p.bio { font-size: 1rem; color: var(--dark-text); margin-bottom: 20px; }
 
     .links {
       display: flex;
@@ -98,22 +92,17 @@
       transition: background-color .2s ease;
     }
 
-    .link-btn i {
-      font-size: 1.4rem;
-      color: var(--orange);
-    }
-
+    .link-btn i { font-size: 1.4rem; color: var(--orange); }
     .link-btn:hover { background-color: #333333; }
 
-    footer {
-      margin-top: 18px;
-      font-size: 0.95rem;
-      color: var(--dark-text);
-    }
+    footer { margin-top: 18px; font-size: 0.95rem; color: var(--dark-text); }
 
-    /* Responsivo */
+    /* Responsivo - celular */
     @media (max-width: 420px) {
-      .container { padding: 0 8px; }
+      .character {
+        width: 90vw;     /* ocupa quase toda a largura do celular */
+        bottom: -10%;    /* ajusta a posição vertical */
+      }
       .profile-pic { width: 100px; height: 100px; }
       .link-btn { font-size: 1.1rem; }
       .link-btn i { font-size: 1.2rem; }
@@ -122,13 +111,11 @@
 </head>
 <body>
 
-  <!-- Personagem PNG preenchendo a tela inteira -->
+  <!-- Personagem PNG -->
   <img src="images/iconvictor.png" alt="Personagem" class="character">
 
   <div class="container">
-    <!-- Foto de perfil -->
     <img src="images/profile_victor.jpg" alt="Minha Foto" class="profile-pic">
-
     <h1>Victor_corrica</h1>
     <p class="bio">Aqui vai uma frase curta sobre você</p>
 
