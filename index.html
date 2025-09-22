@@ -10,53 +10,48 @@
 
   <style>
     :root {
-      --orange: #FF7700;
-      --dark-text: #111111;
-      --bg-orange: #FFAA33;
+      --orange: #FF7700;   /* cor laranja para ícones e textos */
+      --dark-text: #111111; /* texto escuro para bio e rodapé */
+      --bg-orange: #FFAA33; /* fallback laranja se precisar */
     }
 
     * { box-sizing: border-box; }
+
     html, body { height: 100%; margin: 0; }
 
     body {
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
       background-color: var(--bg-orange);
-      background-image: url("images/fundovictor.png");
+      background-image: url("images/fundovictor.png"); 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
       color: var(--dark-text);
       text-align: center;
+      padding: 20px;
       position: relative;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
     }
 
-    /* Personagem PNG totalmente proporcional e centralizado */
+    /* Personagem PNG menor para desktop */
     .character {
       position: absolute;
-      top: 50%;
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: auto;
-      height: 100%;
-      max-height: 100%;
-      max-width: 100%;
+      width: 60vw;      /* tamanho desktop */
+      max-width: 900px; 
       opacity: 0.3;
       z-index: 0;
       pointer-events: none;
-      object-fit: contain; /* garante proporção */
     }
 
     .container {
       position: relative;
       z-index: 1;
       max-width: 420px;
-      width: 100%;
+      margin: 0 auto;
     }
 
     .profile-pic {
@@ -64,13 +59,25 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 0 auto 16px auto;
+      margin-top: 30px;
+      margin-bottom: 16px;
       border: 2px solid var(--dark-text);
       display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    h1 { font-size: 1.8rem; margin: 6px 0; color: var(--dark-text); }
-    p.bio { font-size: 1rem; color: var(--dark-text); margin-bottom: 20px; }
+    h1 {
+      font-size: 1.8rem;
+      margin: 6px 0;
+      color: var(--dark-text);
+    }
+
+    p.bio {
+      font-size: 1rem;
+      color: var(--dark-text);
+      margin-bottom: 20px;
+    }
 
     .links {
       display: flex;
@@ -95,12 +102,30 @@
       transition: background-color .2s ease;
     }
 
-    .link-btn i { font-size: 1.4rem; color: var(--orange); }
+    .link-btn i {
+      font-size: 1.4rem;
+      color: var(--orange);
+    }
+
     .link-btn:hover { background-color: #333333; }
 
-    footer { margin-top: 18px; font-size: 0.95rem; color: var(--dark-text); }
+    footer {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--dark-text);
+    }
 
+    /* Ajuste para celular */
     @media (max-width: 420px) {
+      .container { padding: 0 8px; }
+      .character {
+        width: auto;       /* mantém proporção */
+        height: 120%;      /* aumenta para celular */
+        top: 55%;          /* centraliza verticalmente melhor */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0.3;
+      }
       .profile-pic { width: 100px; height: 100px; }
       .link-btn { font-size: 1.1rem; }
       .link-btn i { font-size: 1.2rem; }
@@ -109,10 +134,13 @@
 </head>
 <body>
 
+  <!-- Personagem PNG no fundo -->
   <img src="images/iconvictor.png" alt="Personagem" class="character">
 
   <div class="container">
+    <!-- Foto de perfil -->
     <img src="images/profile_victor.jpg" alt="Minha Foto" class="profile-pic">
+
     <h1>Victor_corrica</h1>
     <p class="bio">Aqui vai uma frase curta sobre você</p>
 
@@ -139,7 +167,7 @@
     </div>
 
     <footer>
-      <p>© 2025 Victor_corrica | Todos os direitos reservados</p>
+      <p>© 2025 Victor corriça | Todos os direitos reservados</p>
     </footer>
   </div>
 
