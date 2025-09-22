@@ -10,13 +10,14 @@
 
   <style>
     :root {
-      --orange: #FF7700;   
-      --dark-text: #111111; 
-      --bg-blue: #1A1AFF;   
-      --bg-orange: #FFAA33; 
+      --orange: #FF7700;       /* cor laranja para ícones e textos */
+      --dark-text: #111111;    /* texto escuro para bio e rodapé */
+      --bg-blue: #1A1AFF;      /* fallback azul se precisar */
+      --bg-orange: #FFAA33;    /* fallback laranja se precisar */
     }
 
     * { box-sizing: border-box; }
+
     html, body { height: 100%; margin: 0; }
 
     body {
@@ -34,15 +35,15 @@
       overflow: hidden;
     }
 
-    /* Personagem PNG menor */
+    /* Personagem PNG ligeiramente maior e descido */
     .character {
       position: absolute;
-      top: 50%;
+      top: 55%;                /* descido um pouco */
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 60vw;     
-      max-width: 900px; 
-      opacity: 0.3;
+      width: 65vw;             /* maior que antes */
+      max-width: 950px;        /* limite máximo */
+      opacity: 0.30;
       z-index: 0;
       pointer-events: none;
     }
@@ -59,13 +60,25 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin: 30px auto 16px;
+      margin-top: 30px;
+      margin-bottom: 16px;
       border: 2px solid var(--dark-text);
       display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    h1 { font-size: 1.8rem; margin: 6px 0; color: var(--dark-text); }
-    p.bio { font-size: 1rem; color: var(--dark-text); margin-bottom: 20px; }
+    h1 {
+      font-size: 1.8rem;
+      margin: 6px 0;
+      color: var(--dark-text);
+    }
+
+    p.bio {
+      font-size: 1rem;
+      color: var(--dark-text);
+      margin-bottom: 20px;
+    }
 
     .links {
       display: flex;
@@ -84,20 +97,38 @@
       background-color: var(--dark-text);
       color: var(--orange);
       text-decoration: none;
-      font-size: 1.2rem;  
+      font-size: 1.2rem;
       font-weight: 700;
       border-radius: 10px;
       transition: background-color .2s ease;
     }
 
-    .link-btn i { font-size: 1.4rem; color: var(--orange); }
+    .link-btn i {
+      font-size: 1.4rem;
+      color: var(--orange);
+    }
+
     .link-btn:hover { background-color: #333333; }
 
-    footer { margin-top: 18px; font-size: 0.95rem; color: var(--dark-text); }
+    /* Logo da Kick fixa no canto inferior direito */
+    .kick-logo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: auto;
+      z-index: 1000;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      color: var(--dark-text);
+    }
 
     @media (max-width: 420px) {
       .container { padding: 0 8px; }
-      .character { width: 80vw; opacity: 0.25; }
+      .character { width: 80vw; top: 55%; opacity: 0.25; }
       .profile-pic { width: 100px; height: 100px; }
       .link-btn { font-size: 1.1rem; }
       .link-btn i { font-size: 1.2rem; }
@@ -120,20 +151,21 @@
       <a href="https://www.twitch.tv/victor_corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-twitch"></i> Twitch
       </a>
+
       <a href="https://www.youtube.com/@Victor.Corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-youtube"></i> YouTube
       </a>
+
       <a href="https://www.instagram.com/victor_corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-instagram"></i> Instagram
       </a>
+
       <a href="https://x.com/Victor_corrica" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-x-twitter"></i> Twitter (X)
       </a>
+
       <a href="https://discord.gg/37FvBuu2g3" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Discord
-      </a>
-      <a href="https://kick.com/SEU_USUARIO" class="link-btn" target="_blank" rel="noopener">
-        <i class="fas fa-bolt"></i> Kick
       </a>
     </div>
 
@@ -141,6 +173,9 @@
       <p>© 2025 Victor_corrica | Todos os direitos reservados</p>
     </footer>
   </div>
+
+  <!-- Logo da Kick -->
+  <img src="images/kick_logo.png" alt="Kick" class="kick-logo">
 
 </body>
 </html>
