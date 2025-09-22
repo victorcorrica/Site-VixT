@@ -12,8 +12,7 @@
     :root {
       --orange: #FF7700;       /* cor laranja para ícones e textos */
       --dark-text: #111111;    /* texto escuro para bio e rodapé */
-      --bg-blue: #1A1AFF;      /* fallback azul se precisar */
-      --bg-orange: #FFAA33;    /* fallback laranja se precisar */
+      --bg-orange: #FFAA33;    /* fallback laranja */
     }
 
     * { box-sizing: border-box; }
@@ -30,19 +29,24 @@
       background-position: center;
       color: var(--dark-text);
       text-align: center;
-      padding: 20px;
       position: relative;
       overflow: hidden;
+
+      /* centralizar conteúdo verticalmente */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
     /* Personagem PNG ligeiramente maior e descido */
     .character {
       position: absolute;
-      top: 55%;                /* descido um pouco */
+      top: 55%;                
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 65vw;             /* maior que antes */
-      max-width: 950px;        /* limite máximo */
+      width: 65vw;             
+      max-width: 950px;        
       opacity: 0.30;
       z-index: 0;
       pointer-events: none;
@@ -52,7 +56,7 @@
       position: relative;
       z-index: 1;
       max-width: 420px;
-      margin: 0 auto;
+      width: 100%;
     }
 
     .profile-pic {
@@ -60,12 +64,9 @@
       height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      margin-top: 30px;
-      margin-bottom: 16px;
+      margin: 0 auto 16px auto;
       border: 2px solid var(--dark-text);
       display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     h1 {
