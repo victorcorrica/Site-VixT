@@ -23,30 +23,25 @@
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
       background-color: var(--bg-orange);
-      background-image: url("images/fundovictor.png"); 
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
       color: var(--dark-text);
       text-align: center;
       position: relative;
       overflow: hidden;
-
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
     }
 
-    /* Personagem PNG maior no fundo */
+    /* Personagem PNG do fundo cobrindo toda a tela */
     .character {
-      position: absolute;
-      top: 55%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 65vw;
-      max-width: 950px;
-      opacity: 0.30;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover; /* preenche toda a tela sem deformar */
+      opacity: 0.3;
       z-index: 0;
       pointer-events: none;
     }
@@ -116,14 +111,9 @@
       color: var(--dark-text);
     }
 
-    /* Responsivo: ajusta o personagem e layout no celular */
+    /* Responsivo */
     @media (max-width: 420px) {
       .container { padding: 0 8px; }
-      .character { 
-        width: 90vw;        /* maior que antes no celular */
-        top: 60%;           /* desce um pouco para melhor posição */
-        opacity: 0.25; 
-      }
       .profile-pic { width: 100px; height: 100px; }
       .link-btn { font-size: 1.1rem; }
       .link-btn i { font-size: 1.2rem; }
@@ -132,7 +122,7 @@
 </head>
 <body>
 
-  <!-- Personagem PNG no fundo -->
+  <!-- Personagem PNG preenchendo a tela inteira -->
   <img src="images/iconvictor.png" alt="Personagem" class="character">
 
   <div class="container">
@@ -165,7 +155,7 @@
     </div>
 
     <footer>
-      <p>© 2025 Victor_corrica | Todos os direitos reservados</p>
+      <p>© 2025 Victor corriça | Todos os direitos reservados</p>
     </footer>
   </div>
 
