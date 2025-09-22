@@ -10,10 +10,10 @@
 
   <style>
     :root {
-      --orange: #FF7700;
-      --dark-text: #111111;
-      --bg-blue: #1A1AFF;
-      --bg-orange: #FFAA33;
+      --orange: #FF7700;   
+      --dark-text: #111111; 
+      --bg-blue: #1A1AFF;   
+      --bg-orange: #FFAA33; 
     }
 
     * { box-sizing: border-box; }
@@ -23,7 +23,7 @@
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
       background-color: var(--bg-orange);
-      background-image: url("images/fundo.png"); /* substitua este arquivo pelo fundo que quiser */
+      background-image: url("images/fundovictor.png"); 
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -34,13 +34,14 @@
       overflow: hidden;
     }
 
+    /* Personagem PNG menor */
     .character {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 60vw;
-      max-width: 900px;
+      width: 60vw;     
+      max-width: 900px; 
       opacity: 0.3;
       z-index: 0;
       pointer-events: none;
@@ -83,7 +84,7 @@
       background-color: var(--dark-text);
       color: var(--orange);
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.2rem;  
       font-weight: 700;
       border-radius: 10px;
       transition: background-color .2s ease;
@@ -106,11 +107,11 @@
 <body>
 
   <!-- Personagem PNG no fundo -->
-  <img src="images/personagem.png" alt="Personagem" class="character">
+  <img src="images/iconvictor.png" alt="Personagem" class="character">
 
   <div class="container">
     <!-- Foto de perfil -->
-    <img src="images/perfil.png" alt="Minha Foto" class="profile-pic">
+    <img src="images/profile_victor.jpg" alt="Minha Foto" class="profile-pic">
 
     <h1>Victor_corrica</h1>
     <p class="bio">Aqui vai uma frase curta sobre você</p>
