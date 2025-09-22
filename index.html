@@ -1,155 +1,165 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Victor_corrica — Minhas Redes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Victor_corrica</title>
 
   <!-- Font Awesome (ícones) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    :root{
-      --yellow: #FFD700;
+    :root {
+      --orange: #FFA500;
       --black: #111;
+      --blue: #1E90FF;
     }
 
-    *{box-sizing:border-box;}
-    html,body{height:100%;margin:0;font-family: 'Helvetica Neue', Arial, sans-serif;}
+    * { box-sizing: border-box; }
 
-    body{
-      min-height:100vh;
-      padding:20px;
-      text-align:center;
-      background-color:var(--yellow);
-      background-image: url("imagens/fundovictor.png");
-      background-repeat:no-repeat;
-      background-size:cover;
-      background-position:center;
-      color:var(--black);
-      position:relative;
-      overflow:hidden;
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
     }
 
-    .character{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      width:80vw;
-      max-width:1200px;
-      opacity:0.30;
-      z-index:0;
-      pointer-events:none;
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      min-height: 100vh;
+
+      /* Gradiente fixo que cobre tudo */
+      background: linear-gradient(135deg, var(--orange) 70%, var(--blue) 30%);
+      
+      /* Se a imagem existir, aparece por cima do gradiente */
+      background-image: url("images/fundovictor.png"), linear-gradient(135deg, var(--orange) 70%, var(--blue) 30%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      
+      color: var(--black);
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    .container{
-      position:relative;
-      z-index:1;
-      max-width:440px;
-      margin:0 auto;
+    /* Personagem PNG no fundo */
+    .character {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      max-width: 1200px;
+      opacity: 0.30;
+      z-index: 0;
+      pointer-events: none;
     }
 
-    .profile-pic{
-      width:130px;
-      height:130px;
-      border-radius:50%;
-      object-fit:cover;
-      margin:30px auto 14px;
-      border:3px solid var(--black);
-      display:block;
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 420px;
+      margin: 0 auto;
     }
 
-    h1{
-      font-size:2.1rem;
-      margin:6px 0;
-      letter-spacing:0.5px;
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 30px;
+      margin-bottom: 16px;
+      border: 3px solid var(--black);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    p.bio{
-      font-size:1rem;
-      color:#222;
-      margin-bottom:18px;
+    h1 {
+      font-size: 2.2rem;
+      margin: 6px 0;
+      color: var(--black);
     }
 
-    .links{
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-      padding:0 12px;
-      margin:0 auto 28px;
+    p.bio {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 20px;
     }
 
-    .link-btn{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:14px;
-      padding:16px;
-      background-color:var(--black);
-      color:var(--yellow);
-      text-decoration:none;
-      font-size:1.28rem;
-      font-weight:800;
-      border-radius:12px;
-      transition:background-color .18s ease, transform .15s ease;
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0 auto 30px;
+      padding: 0 10px;
     }
 
-    .link-btn i{ font-size:1.6rem; color:var(--yellow); }
-
-    .link-btn:hover{ background-color:#333; transform:scale(1.04); }
-
-    footer{
-      margin-top:10px;
-      font-size:0.9rem;
-      color:var(--black);
+    .link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 16px;
+      background-color: var(--black);
+      color: var(--orange);
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 12px;
+      transition: background-color .2s ease;
     }
 
-    @media (max-width:420px){
-      .profile-pic{ width:98px;height:98px; }
-      .link-btn{ font-size:1.05rem; padding:12px; gap:10px; }
-      .link-btn i{ font-size:1.35rem; }
-      .character{ width:110vw; opacity:0.25; }
+    .link-btn i {
+      font-size: 1.5rem;
+      color: var(--orange);
+    }
+
+    .link-btn:hover { background-color: #333; }
+
+    footer {
+      margin-top: 18px;
+      font-size: 0.9rem;
+      color: var(--black);
+    }
+
+    @media (max-width: 420px) {
+      .container { padding: 0 8px; }
+      .character { width: 110vw; opacity: 0.25; }
+      .profile-pic { width: 110px; height: 110px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Personagem PNG grande -->
-  <img src="imagens/iconvictor.png" alt="Arte Victor_corrica" class="character">
+  <img src="images/iconvictor.png" alt="Personagem" class="character">
 
   <div class="container">
-    <!-- Foto de perfil -->
-    <img src="imagens/profile_victor.jpg" alt="Victor_corrica" class="profile-pic">
+    <img src="images/profile_victor.jpg" alt="Minha Foto" class="profile-pic">
 
     <h1>Victor_corrica</h1>
-    <p class="bio">Sua frase curta ou slogan aqui</p>
+    <p class="bio">Aqui vai uma frase curta sobre você ou seu projeto</p>
 
-    <!-- Links -->
     <div class="links">
-      <a class="link-btn" href="https://www.instagram.com/SEU_USUARIO" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i> Instagram
+      <a href="https://www.twitch.tv/" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-twitch"></i> Twitch
       </a>
-
-      <a class="link-btn" href="https://www.youtube.com/SEU_CANAL" target="_blank" rel="noopener">
+      <a href="https://www.youtube.com/" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-youtube"></i> YouTube
       </a>
-
-      <!-- Kick -->
-      <a class="link-btn" href="https://kick.com/SEU_USUARIO" target="_blank" rel="noopener">
-        <i class="fas fa-play"></i> Kick
+      <a href="https://www.instagram.com/" class="link-btn" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i> Instagram
       </a>
-
-      <a class="link-btn" href="https://x.com/SEU_USUARIO" target="_blank" rel="noopener">
+      <a href="https://x.com/" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-x-twitter"></i> Twitter (X)
       </a>
-
-      <a class="link-btn" href="https://discord.gg/SEU_SERVIDOR" target="_blank" rel="noopener">
+      <a href="https://discord.com/" class="link-btn" target="_blank" rel="noopener">
         <i class="fab fa-discord"></i> Discord
       </a>
-
-      <a class="link-btn" href="https://www.twitch.tv/SEU_CANAL" target="_blank" rel="noopener">
-        <i class="fab fa-twitch"></i> Twitch
+      <a href="https://kick.com/" class="link-btn" target="_blank" rel="noopener">
+        <i class="fas fa-bolt"></i> Kick
       </a>
     </div>
 
