@@ -10,9 +10,9 @@
 
   <style>
     :root {
-      --orange: #FF7700;       /* cor laranja para ícones e textos */
-      --dark-text: #111111;    /* texto escuro para bio e rodapé */
-      --bg-orange: #FFAA33;    /* fallback laranja */
+      --orange: #FF7700;       
+      --dark-text: #111111;    
+      --bg-orange: #FFAA33;    
     }
 
     * { box-sizing: border-box; }
@@ -32,21 +32,20 @@
       position: relative;
       overflow: hidden;
 
-      /* centralizar conteúdo verticalmente */
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 20px;
     }
 
-    /* Personagem PNG ligeiramente maior e descido */
+    /* Personagem PNG maior no fundo */
     .character {
       position: absolute;
-      top: 55%;                
+      top: 55%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 65vw;             
-      max-width: 950px;        
+      width: 65vw;
+      max-width: 950px;
       opacity: 0.30;
       z-index: 0;
       pointer-events: none;
@@ -117,9 +116,14 @@
       color: var(--dark-text);
     }
 
+    /* Responsivo: ajusta o personagem e layout no celular */
     @media (max-width: 420px) {
       .container { padding: 0 8px; }
-      .character { width: 80vw; top: 55%; opacity: 0.25; }
+      .character { 
+        width: 90vw;        /* maior que antes no celular */
+        top: 60%;           /* desce um pouco para melhor posição */
+        opacity: 0.25; 
+      }
       .profile-pic { width: 100px; height: 100px; }
       .link-btn { font-size: 1.1rem; }
       .link-btn i { font-size: 1.2rem; }
