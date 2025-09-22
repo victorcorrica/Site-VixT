@@ -10,9 +10,9 @@
 
   <style>
     :root {
-      --orange: #FF7700;       
-      --dark-text: #111111;    
-      --bg-orange: #FFAA33;    
+      --orange: #FF7700;
+      --dark-text: #111111;
+      --bg-orange: #FFAA33;
     }
 
     * { box-sizing: border-box; }
@@ -22,7 +22,7 @@
       font-family: 'Helvetica Neue', Arial, sans-serif;
       min-height: 100vh;
       background-color: var(--bg-orange);
-      background-image: url("images/fundovictor.png"); /* Fundo sempre visível */
+      background-image: url("images/fundovictor.png");
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -36,14 +36,16 @@
       padding: 20px;
     }
 
-    /* Personagem PNG do fundo */
+    /* Personagem PNG proporcional */
     .character {
       position: absolute;
-      bottom: 0;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      width: 50%;        /* Desktop: ocupa metade da tela */
-      max-width: 600px;
+      transform: translate(-50%, -50%);
+      width: 60vw;      /* ocupa 60% da largura da tela */
+      height: auto;
+      max-width: 900px;
+      max-height: 80vh; /* não ultrapassa 80% da altura da tela */
       opacity: 0.3;
       z-index: 0;
       pointer-events: none;
@@ -97,11 +99,11 @@
 
     footer { margin-top: 18px; font-size: 0.95rem; color: var(--dark-text); }
 
-    /* Responsivo - celular */
+    /* Responsivo */
     @media (max-width: 420px) {
       .character {
-        width: 90vw;     /* ocupa quase toda a largura do celular */
-        bottom: -10%;    /* ajusta a posição vertical */
+        width: 90vw;       /* ocupa mais espaço no celular */
+        max-height: 70vh;  /* altura proporcional */
       }
       .profile-pic { width: 100px; height: 100px; }
       .link-btn { font-size: 1.1rem; }
@@ -142,7 +144,7 @@
     </div>
 
     <footer>
-      <p>© 2025 Victor corriça | Todos os direitos reservados</p>
+      <p>© 2025 Victor_corrica | Todos os direitos reservados</p>
     </footer>
   </div>
 
