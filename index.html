@@ -36,19 +36,20 @@
       padding: 20px;
     }
 
-    /* Personagem PNG proporcional */
+    /* Personagem PNG totalmente proporcional e centralizado */
     .character {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 60vw;      /* ocupa 60% da largura da tela */
-      height: auto;
-      max-width: 900px;
-      max-height: 80vh; /* não ultrapassa 80% da altura da tela */
+      width: auto;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
       opacity: 0.3;
       z-index: 0;
       pointer-events: none;
+      object-fit: contain; /* garante proporção */
     }
 
     .container {
@@ -99,12 +100,7 @@
 
     footer { margin-top: 18px; font-size: 0.95rem; color: var(--dark-text); }
 
-    /* Responsivo */
     @media (max-width: 420px) {
-      .character {
-        width: 90vw;       /* ocupa mais espaço no celular */
-        max-height: 70vh;  /* altura proporcional */
-      }
       .profile-pic { width: 100px; height: 100px; }
       .link-btn { font-size: 1.1rem; }
       .link-btn i { font-size: 1.2rem; }
@@ -113,7 +109,6 @@
 </head>
 <body>
 
-  <!-- Personagem PNG -->
   <img src="images/iconvictor.png" alt="Personagem" class="character">
 
   <div class="container">
